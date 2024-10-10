@@ -1,5 +1,7 @@
 package com.unitedinternet.calendar.api;
 
+import org.unitedinternet.cosmo.controller.CalendarController;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.ldap.userdetails.Person;
@@ -11,10 +13,10 @@ import java.util.Arrays;
 
 
 @RestController
-@RequestMapping("test")
-public class HelloController {
+@RequestMapping("/")
+public class HelloController extends CalendarController {
 
-
+/*
     @GetMapping("/")
     public String hello(Authentication authentication) {
         return "Hello " +
@@ -37,5 +39,6 @@ public class HelloController {
     public String test(){
         return "<h2>Test</h2><br/>It is working...";
     }
+*/
 
 }

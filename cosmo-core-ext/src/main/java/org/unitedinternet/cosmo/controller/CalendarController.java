@@ -6,17 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("")
+@RequestMapping("/")
 public class CalendarController {
 
-    private final CalendarManagementService calendarManagementService;
+    private final CalendarManagementService calendarManagementService = new CalendarManagementService();
 
-    @Autowired
-    public CalendarController(CalendarManagementService calendarManagementService) {
-        this.calendarManagementService = calendarManagementService;
-    }
-
-    @PostMapping("/manage-event")
+    @PostMapping("/")
     public String manageEvent(@RequestBody VEvent event) {
         calendarManagementService.handleCalendarEvent(event);
         return "Event processed";
